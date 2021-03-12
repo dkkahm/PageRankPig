@@ -66,7 +66,7 @@ public class PageRankLoad extends LoadFunc {
                 return tuple;
 
             begin = page.find(">", page.find("<text"));
-            end = page.find("</title>", begin);
+            end = page.find("</text>", begin);
 
             if (begin + 1 == -1 || end == -1) {
                 pageTitle = "";
