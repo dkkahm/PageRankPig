@@ -2,6 +2,7 @@ package pagerankpig;
 
 import org.apache.commons.logging.Log;
 import org.apache.commons.logging.LogFactory;
+import org.apache.hadoop.io.LongWritable;
 import org.apache.hadoop.io.Text;
 import org.apache.hadoop.mapreduce.InputFormat;
 import org.apache.hadoop.mapreduce.Job;
@@ -38,7 +39,7 @@ public class PageRankLoad extends LoadFunc {
 
     @Override
     public void prepareToRead(@SuppressWarnings("rawtypes") RecordReader recordReader, PigSplit pigSplit) throws IOException {
-        this.reader = reader;
+        this.reader = recordReader;
     }
 
     @Override
